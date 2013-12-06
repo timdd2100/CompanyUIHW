@@ -21,6 +21,12 @@
 		3BF72F6E18516D9500C53C65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BF72F6C18516D9500C53C65 /* InfoPlist.strings */; };
 		3BF72F7018516D9500C53C65 /* CompanyUIHWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F6F18516D9500C53C65 /* CompanyUIHWTests.m */; };
 		3BF72F7B18516E4400C53C65 /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F7A18516E4400C53C65 /* CompanyViewController.m */; };
+		3BF72F8018516FBF00C53C65 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F7F18516FBF00C53C65 /* Company.m */; };
+		3BF72F8918516FDD00C53C65 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F8418516FDD00C53C65 /* Employee.m */; };
+		3BF72F8A18516FDD00C53C65 /* Leader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F8618516FDD00C53C65 /* Leader.m */; };
+		3BF72F8B18516FDD00C53C65 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F8818516FDD00C53C65 /* Member.m */; };
+		3BF72F8E1851992200C53C65 /* LeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F8D1851992200C53C65 /* LeaderViewController.m */; };
+		3BF72F941851B33F00C53C65 /* LDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F931851B33F00C53C65 /* LDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,20 @@
 		3BF72F6F18516D9500C53C65 /* CompanyUIHWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompanyUIHWTests.m; sourceTree = "<group>"; };
 		3BF72F7918516E4400C53C65 /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
 		3BF72F7A18516E4400C53C65 /* CompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyViewController.m; sourceTree = "<group>"; };
+		3BF72F7E18516FBF00C53C65 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		3BF72F7F18516FBF00C53C65 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		3BF72F8118516FD000C53C65 /* IPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPerson.h; sourceTree = "<group>"; };
+		3BF72F8218516FD000C53C65 /* AdjSalary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdjSalary.h; sourceTree = "<group>"; };
+		3BF72F8318516FDD00C53C65 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		3BF72F8418516FDD00C53C65 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		3BF72F8518516FDD00C53C65 /* Leader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leader.h; sourceTree = "<group>"; };
+		3BF72F8618516FDD00C53C65 /* Leader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leader.m; sourceTree = "<group>"; };
+		3BF72F8718516FDD00C53C65 /* Member.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
+		3BF72F8818516FDD00C53C65 /* Member.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
+		3BF72F8C1851992200C53C65 /* LeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderViewController.h; sourceTree = "<group>"; };
+		3BF72F8D1851992200C53C65 /* LeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderViewController.m; sourceTree = "<group>"; };
+		3BF72F921851B33F00C53C65 /* LDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDetailViewController.h; sourceTree = "<group>"; };
+		3BF72F931851B33F00C53C65 /* LDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +132,10 @@
 		3BF72F4A18516D9500C53C65 /* CompanyUIHW */ = {
 			isa = PBXGroup;
 			children = (
-				3BF72F7D18516E5200C53C65 /* Employee */,
+				3BF72F8118516FD000C53C65 /* IPerson.h */,
+				3BF72F8218516FD000C53C65 /* AdjSalary.h */,
 				3BF72F7C18516E4B00C53C65 /* Company */,
+				3BF72F7D18516E5200C53C65 /* Employee */,
 				3BF72F5318516D9500C53C65 /* AppDelegate.h */,
 				3BF72F5418516D9500C53C65 /* AppDelegate.m */,
 				3BF72F5618516D9500C53C65 /* Main.storyboard */,
@@ -155,6 +177,8 @@
 		3BF72F7C18516E4B00C53C65 /* Company */ = {
 			isa = PBXGroup;
 			children = (
+				3BF72F7E18516FBF00C53C65 /* Company.h */,
+				3BF72F7F18516FBF00C53C65 /* Company.m */,
 				3BF72F7918516E4400C53C65 /* CompanyViewController.h */,
 				3BF72F7A18516E4400C53C65 /* CompanyViewController.m */,
 			);
@@ -164,6 +188,16 @@
 		3BF72F7D18516E5200C53C65 /* Employee */ = {
 			isa = PBXGroup;
 			children = (
+				3BF72F8C1851992200C53C65 /* LeaderViewController.h */,
+				3BF72F8D1851992200C53C65 /* LeaderViewController.m */,
+				3BF72F8318516FDD00C53C65 /* Employee.h */,
+				3BF72F8418516FDD00C53C65 /* Employee.m */,
+				3BF72F8518516FDD00C53C65 /* Leader.h */,
+				3BF72F8618516FDD00C53C65 /* Leader.m */,
+				3BF72F8718516FDD00C53C65 /* Member.h */,
+				3BF72F8818516FDD00C53C65 /* Member.m */,
+				3BF72F921851B33F00C53C65 /* LDetailViewController.h */,
+				3BF72F931851B33F00C53C65 /* LDetailViewController.m */,
 			);
 			name = Employee;
 			sourceTree = "<group>";
@@ -265,9 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BF72F8918516FDD00C53C65 /* Employee.m in Sources */,
 				3BF72F7B18516E4400C53C65 /* CompanyViewController.m in Sources */,
 				3BF72F5518516D9500C53C65 /* AppDelegate.m in Sources */,
 				3BF72F5118516D9500C53C65 /* main.m in Sources */,
+				3BF72F8B18516FDD00C53C65 /* Member.m in Sources */,
+				3BF72F941851B33F00C53C65 /* LDetailViewController.m in Sources */,
+				3BF72F8E1851992200C53C65 /* LeaderViewController.m in Sources */,
+				3BF72F8A18516FDD00C53C65 /* Leader.m in Sources */,
+				3BF72F8018516FBF00C53C65 /* Company.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
