@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CompanyViewController.h
 //  CompanyUIHW
 //
 //  Created by timkao on 13/12/6.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CompanyViewController : UITableViewController
 
 @end
