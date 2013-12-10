@@ -8,17 +8,16 @@
 
 #import "CompanyViewController.h"
 #import "LeaderViewController.h"
+#import "Company.h"
 @interface CompanyViewController ()
-{
-    LeaderViewController *LtableView;
-    NSString *companyName;
-}
 
+@property LeaderViewController *LtableView;
+@property  NSString *companyName;
 
 @end
 
 @implementation CompanyViewController
-@synthesize Companys;
+@synthesize Companys, LtableView, companyName;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -67,7 +66,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [Companys objectForKey:[NSString stringWithFormat:@"%li",(long)indexPath.row + 1]];
+   
+    companyName =[[Companys objectForKey:[NSString stringWithFormat:@"%li",(long)indexPath.row + 1]] getFullName];
+    cell.textLabel.text = companyName;
     return cell;
 }
 
@@ -77,11 +78,11 @@
     //準備好欲傳送的物件
     companyName = [NSString stringWithFormat:@"%@", [tableView cellForRowAtIndexPath:indexPath].textLabel.text];
     
-    LtableView = [self.storyboard instantiateViewControllerWithIdentifier:@"LeaderViewController"];
+   
     
     //設定好要傳送的資料
     LtableView.Lreceivedict = [NSMutableDictionary new];
-    [LtableView.Lreceivedict setObject:self->companyName forKey:@"CompanyName"];
+    [LtableView.Lreceivedict setObject:self.companyName forKey:@"CompanyName"];
     
     [self.navigationController pushViewController:LtableView animated:YES];
     //[self presentViewController:LtableView animated:YES completion:^(void){}];
@@ -128,16 +129,16 @@
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    LeaderViewController  *leaderview = [segue destinationViewController];
-    
-    //設定好要傳送的資料
-    leaderview.Lreceivedict = [NSMutableDictionary new];
-    [leaderview.Lreceivedict setObject:self->companyName forKey:@"CompanyName"];
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    // Get the new view controller using [segue destinationViewController].
+//    // Pass the selected object to the new view controller.
+//    LeaderViewController  *leaderview = [segue destinationViewController];
+//    
+//    //設定好要傳送的資料
+//    leaderview.Lreceivedict = [NSMutableDictionary new];
+//    [leaderview.Lreceivedict setObject:self->companyName forKey:@"CompanyName"];
+//}
 
 
 #pragma mark -functions
@@ -158,9 +159,13 @@
         //add 到字典中
         NSUInteger i = [Companys count] + 1;
         NSString *companyID = [NSString stringWithFormat:@"%lu",(unsigned long)i];
-        [Companys setObject:[alertView textFieldAtIndex:0].text forKey:companyID];
+        companyName = [alertView textFieldAtIndex:0].text;
         
-        //重新reload tableView
+        //建立company 物件
+        Company *company = [[Company alloc]initWitName:companyName];
+        
+        [Companys setObject:company forKey:companyID];
+                //重新reload tableView
         [self.CMtableView reloadData];
     }
 }
