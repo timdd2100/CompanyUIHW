@@ -75,7 +75,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="LeaderCell" selectionStyle="default" indentationWidth="10" id="sV1-n2-0dh">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="LeaderCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaderCell" id="sV1-n2-0dh">
                                         <rect key="frame" x="0.0" y="22" width="290" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sV1-n2-0dh" id="Fod-y2-D4a">
@@ -94,6 +94,7 @@
                     </view>
                     <connections>
                         <outlet property="LCompanyName" destination="bGq-Ed-Jjw" id="i6q-Ez-uEn"/>
+                        <outlet property="LtableView" destination="cnn-cM-5Rh" id="ZVA-Ow-LbQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAo-ye-G1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,7 +239,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="LDAge" destination="ADC-8X-mDe" id="GuE-qW-GTg"/>
+                        <outlet property="LDFirstName" destination="QxF-mE-MDw" id="MXF-vb-r0F"/>
+                        <outlet property="LDLastName" destination="Mcj-6e-X7L" id="5b0-w4-ua1"/>
+                        <outlet property="LDSalary" destination="DEg-WB-a9w" id="794-c2-jcu"/>
+                        <outlet property="LDSex" destination="yAd-0R-eV2" id="wTH-oe-1Bp"/>
+                        <outlet property="LDdescription" destination="FQV-kY-Lkd" id="X8F-Wq-UuJ"/>
                         <outlet property="LDetailToolbar" destination="wy1-Pb-8T7" id="0wx-uc-5Ys"/>
+                        <outlet property="LDskill" destination="tJF-hN-9Oh" id="YE7-z5-1gE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oh2-m1-T37" userLabel="First Responder" sceneMemberID="firstResponder"/>

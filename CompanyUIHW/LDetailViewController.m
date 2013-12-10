@@ -7,7 +7,6 @@
 //
 
 #import "LDetailViewController.h"
-#import "LeaderViewController.h"
 @interface LDetailViewController ()
 
 @end
@@ -21,7 +20,7 @@
 	// Do any additional setup after loading the view.
     
     // set
- 
+    [self.LDSex setSelectedSegmentIndex:1];
     //
     //加入手勢 判別 鍵盤消失時機
     UITapGestureRecognizer *tapscroll = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped)];
@@ -39,23 +38,63 @@
     }];
 }
 - (IBAction)LdetailSave:(UIBarButtonItem *)sender {
-    LeaderViewController *leaderview = [self.storyboard instantiateViewControllerWithIdentifier:@"LeaderViewController"];
-    //set
-    leaderview.LDreceivedict = [NSMutableDictionary new];
-    
-    //set trans value
-    [leaderview.LDreceivedict setObject:@"123" forKey:@"FirstName"];
-    [leaderview.LDreceivedict setObject:@"123" forKey:@"LastName"];
-    [leaderview.LDreceivedict setObject:@"123" forKey:@"age"];
-    [leaderview.LDreceivedict setObject:@"123" forKey:@"Salary"];
-    [leaderview.LDreceivedict setObject:@"123" forKey:@"Sex"];
-    [leaderview.LDreceivedict setObject:@"123" forKey:@"skill"];
-    [leaderview.LDreceivedict setObject:@"123" forKey:@"Description"];
-
+    LeaderViewController *leaderview =  self.parentLeader;
     
     
+    
+    NSString *sex;
+    switch (self.LDSex.selectedSegmentIndex) {
+        case 0:
+            sex = [NSString stringWithFormat:@"Male"];
+            break;
+        case 1:
+            sex = [NSString stringWithFormat:@"FeMale"];
+            break;
+        default:
+            break;
+    }
+    //init
+    self.LDsenddict = [NSMutableDictionary new];
+    
+    //set value
+    [self.LDsenddict setObject:self.LDFirstName.text forKey:@"FirstName"];
+    [self.LDsenddict setObject:self.LDLastName.text forKey:@"LastName"];
+    [self.LDsenddict setObject:self.LDAge.text forKey:@"age"];
+    [self.LDsenddict setObject:self.LDSalary.text forKey:@"Salary"];
+    [self.LDsenddict setObject:sex forKey:@"Sex"];
+    [self.LDsenddict setObject:self.LDskill.text forKey:@"skill"];
+    [self.LDsenddict setObject:self.LDdescription.text forKey:@"Description"];
+    
+    [leaderview.leaders addObject:self.LDsenddict];
+    [leaderview.LtableView reloadData];
+    
+    
+    //    [self presentViewController: leaderview animated:(YES) completion:^{
+    //        //換完頁後
+    //
+    //
+    //        //塞回leader
+    //        [leaderview.leaders addObject:self.LDsenddict];
+    //        [leaderview.LtableView reloadData];
+    //    }];
+    
+    
+    
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        //換完頁後
+        //塞回leader
+        
+    }];
 }
 
+
+
+//-(void)viewWillDisappear:(BOOL)animated
+//{
+//    LeaderViewController *leaderview = [self.storyboard instantiateViewControllerWithIdentifier:@"LeaderViewController"];
+//    [leaderview.LtableView reloadData];
+//}
 
 -(void)tapped
 {

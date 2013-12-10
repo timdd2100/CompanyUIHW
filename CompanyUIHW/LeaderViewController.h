@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *LCompanyName;
 @property (nonatomic, strong) NSMutableDictionary *Lreceivedict;
 @property (nonatomic, strong) NSMutableDictionary *LDreceivedict;
+@property (nonatomic, strong) NSMutableArray *leaders;
+@property (weak, nonatomic) IBOutlet UITableView *LtableView;
 
 
 
