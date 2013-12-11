@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *leaders;
 @property (weak, nonatomic) IBOutlet UITableView *LtableView;
 
+-(id)initWithCompanyName : (NSString *) companyname;
 
 
 @end

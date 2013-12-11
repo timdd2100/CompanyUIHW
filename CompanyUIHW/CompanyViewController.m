@@ -7,18 +7,18 @@
 //
 
 #import "CompanyViewController.h"
-#import "LeaderViewController.h"
+
 @interface CompanyViewController ()
 {
-    LeaderViewController *LtableView;
+    //LeaderViewController *LtableView;
     NSString *companyName;
 }
-
+@property LeaderViewController *LtableView;
 
 @end
 
 @implementation CompanyViewController
-@synthesize Companys;
+@synthesize Companys,LtableView;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -67,7 +67,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [Companys objectForKey:[NSString stringWithFormat:@"%li",(long)indexPath.row + 1]];
+    CompanyViewController *temp = [Companys objectForKey:[NSString stringWithFormat:@"%li",(long)indexPath.row + 1]];
+    
+    
+    cell.textLabel.text = temp.CompanyName;
     return cell;
 }
 
@@ -77,7 +80,6 @@
     //準備好欲傳送的物件
     companyName = [NSString stringWithFormat:@"%@", [tableView cellForRowAtIndexPath:indexPath].textLabel.text];
     
-    LtableView = [self.storyboard instantiateViewControllerWithIdentifier:@"LeaderViewController"];
     
     //設定好要傳送的資料
     LtableView.Lreceivedict = [NSMutableDictionary new];
@@ -158,8 +160,12 @@
         //add 到字典中
         NSUInteger i = [Companys count] + 1;
         NSString *companyID = [NSString stringWithFormat:@"%lu",(unsigned long)i];
-        [Companys setObject:[alertView textFieldAtIndex:0].text forKey:companyID];
+        self.CompanyName = [alertView textFieldAtIndex:0].text;
+        [Companys setObject:self forKey:companyID];
         
+        //每個company 都會有一個Leader清單
+        LtableView = [[LeaderViewController alloc]initWithCompanyName:self.CompanyName];
+//        LtableView = [self.storyboard instantiateViewControllerWithIdentifier:@"LeaderViewController"];
         //重新reload tableView
         [self.CMtableView reloadData];
     }

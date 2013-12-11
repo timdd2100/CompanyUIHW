@@ -14,6 +14,17 @@
 @implementation LeaderViewController
 @synthesize LCompanyName,Lreceivedict,leaders,LtableView,LDreceivedict;
 
+
+-(id)initWithCompanyName : (NSString *) companyname;
+{
+    self = [super init];
+    if (self) {
+        //set 接收到的資料
+        LCompanyName.text = companyname;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -21,7 +32,6 @@
     //init
     leaders = [NSMutableArray new];
     
-    //set 接收到的資料
     LCompanyName.text = [Lreceivedict objectForKey:@"CompanyName"];
     
     //set navigation
