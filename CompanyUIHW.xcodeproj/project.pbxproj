@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B0C6D1B1857EE5200BA77B3 /* EmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C6D1A1857EE5200BA77B3 /* EmployeeViewController.m */; };
 		3B2B9D7E185990AF003BFCA2 /* EMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B9D7D185990AF003BFCA2 /* EMDetailViewController.m */; };
+		3B2B9D84185A94EA003BFCA2 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B9D83185A94EA003BFCA2 /* AddViewController.m */; };
 		3BF72F4518516D9500C53C65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF72F4418516D9500C53C65 /* Foundation.framework */; };
 		3BF72F4718516D9500C53C65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF72F4618516D9500C53C65 /* CoreGraphics.framework */; };
 		3BF72F4918516D9500C53C65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF72F4818516D9500C53C65 /* UIKit.framework */; };
@@ -45,6 +46,8 @@
 		3B0C6D1A1857EE5200BA77B3 /* EmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeViewController.m; sourceTree = "<group>"; };
 		3B2B9D7C185990AF003BFCA2 /* EMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDetailViewController.h; sourceTree = "<group>"; };
 		3B2B9D7D185990AF003BFCA2 /* EMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDetailViewController.m; sourceTree = "<group>"; };
+		3B2B9D82185A94EA003BFCA2 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		3B2B9D83185A94EA003BFCA2 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		3BF72F4118516D9500C53C65 /* CompanyUIHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompanyUIHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF72F4418516D9500C53C65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BF72F4618516D9500C53C65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,12 +138,12 @@
 		3BF72F4A18516D9500C53C65 /* CompanyUIHW */ = {
 			isa = PBXGroup;
 			children = (
+				3BF72F5318516D9500C53C65 /* AppDelegate.h */,
+				3BF72F5418516D9500C53C65 /* AppDelegate.m */,
 				3BF72F8118516FD000C53C65 /* IPerson.h */,
 				3BF72F8218516FD000C53C65 /* AdjSalary.h */,
 				3BF72F7C18516E4B00C53C65 /* Company */,
 				3BF72F7D18516E5200C53C65 /* Employee */,
-				3BF72F5318516D9500C53C65 /* AppDelegate.h */,
-				3BF72F5418516D9500C53C65 /* AppDelegate.m */,
 				3BF72F5618516D9500C53C65 /* Main.storyboard */,
 				3BF72F5C18516D9500C53C65 /* Images.xcassets */,
 				3BF72F4B18516D9500C53C65 /* Supporting Files */,
@@ -203,6 +206,8 @@
 				3BF72F931851B33F00C53C65 /* LDetailViewController.m */,
 				3B2B9D7C185990AF003BFCA2 /* EMDetailViewController.h */,
 				3B2B9D7D185990AF003BFCA2 /* EMDetailViewController.m */,
+				3B2B9D82185A94EA003BFCA2 /* AddViewController.h */,
+				3B2B9D83185A94EA003BFCA2 /* AddViewController.m */,
 			);
 			name = Employee;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 			files = (
 				3BF72F8918516FDD00C53C65 /* Employee.m in Sources */,
 				3BF72F7B18516E4400C53C65 /* CompanyViewController.m in Sources */,
+				3B2B9D84185A94EA003BFCA2 /* AddViewController.m in Sources */,
 				3BF72F5518516D9500C53C65 /* AppDelegate.m in Sources */,
 				3BF72F5118516D9500C53C65 /* main.m in Sources */,
 				3BF72F8B18516FDD00C53C65 /* Member.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Employee.h"
-@interface EMDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface EMDetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextView *EMDtextView;
 
 @property (nonatomic,strong)Employee *ReciveEmployee;

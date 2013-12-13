@@ -151,12 +151,6 @@
     EMD.MemberArray = memberArray;
     
     [self presentViewController:EMD animated:YES completion:Nil];
-    
-    
-//    UIAlertView *description = [[UIAlertView alloc]initWithTitle:@"自我介紹" message:[em getDescription] delegate:Nil  cancelButtonTitle:@"確認" otherButtonTitles: nil];
-//    description.alertViewStyle = UIAlertViewStyleDefault;
-//    
-//    [description show];
 }
 
 #pragma -mark functions
