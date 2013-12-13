@@ -25,6 +25,6 @@
 
 -(NSString *)Marriage;//回傳婚姻狀態
 
-
+-(NSString *) getDescription;
 
 @end

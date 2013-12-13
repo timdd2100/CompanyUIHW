@@ -7,7 +7,8 @@
 //
 
 #import "Company.h"
-
+#import "Leader.h"
+#import "Member.h"
 
 @implementation Company
 @synthesize employee,sex,age,companyname,firstname,lastname;
@@ -39,6 +40,34 @@
 {
     return (int)[employee count];
 }
+
+-(int)getLeaderCount
+{
+    int count = 0;
+    for (int i = 0; i < [self getEmployeeCount]; i++) {
+        id emp = [[employee allValues] objectAtIndex:i];
+        if([emp isKindOfClass:[Leader class]])
+        {
+             count++;
+        }
+    }
+    return count;
+}
+
+-(int)getMemberCount
+{
+    int count = 0;
+    for (int i = 0; i < [self getEmployeeCount]; i++) {
+        id emp = [[employee allValues] objectAtIndex:i];
+        if([emp isKindOfClass:[Member class]])
+        {
+            count++;
+        }
+    }
+    return count;
+
+}
+
 
 -(void)showEmployee
 {

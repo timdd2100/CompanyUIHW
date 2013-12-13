@@ -23,6 +23,11 @@
 //回傳員工數
 -(int)getEmployeeCount;
 
+//
+-(int)getLeaderCount;
+
+-(int)getMemberCount;
+
 //列出有那些員工
 -(void)showEmployee;
 

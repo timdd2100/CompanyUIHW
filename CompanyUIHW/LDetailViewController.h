@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LeaderViewController.h"
+#import "EmployeeViewController.h"
 
-@interface LDetailViewController : UIViewController
+@interface LDetailViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIToolbar *LDetailToolbar;
 
 @property (weak, nonatomic) IBOutlet UITextField *LDFirstName;
@@ -26,7 +26,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *LDdescription;
 
-@property (nonatomic, strong) NSMutableDictionary *LDsenddict;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *LDType;
 
-@property (nonatomic) LeaderViewController *parentLeader;
+@property (nonatomic, strong) NSMutableDictionary *LDreceivedict;
+
+@property (nonatomic) EmployeeViewController *parentLeader;
 @end

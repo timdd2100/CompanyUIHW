@@ -7,8 +7,13 @@
 //
 
 #import "LDetailViewController.h"
-@interface LDetailViewController ()
+#import "Leader.h"
+#import "Member.h"
 
+@interface LDetailViewController ()
+{
+    Company *company;
+}
 @end
 
 @implementation LDetailViewController
@@ -21,6 +26,7 @@
     
     // set
     [self.LDSex setSelectedSegmentIndex:1];
+    [self.LDType setSelectedSegmentIndex:1];
     //
     //加入手勢 判別 鍵盤消失時機
     UITapGestureRecognizer *tapscroll = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped)];
@@ -38,9 +44,10 @@
     }];
 }
 - (IBAction)LdetailSave:(UIBarButtonItem *)sender {
-    LeaderViewController *leaderview =  self.parentLeader;
+    EmployeeViewController *leaderview =  self.parentLeader;
     
-    
+    //設定 公司
+    company = [self.LDreceivedict objectForKey:@"Company"];
     
     NSString *sex;
     switch (self.LDSex.selectedSegmentIndex) {
@@ -53,32 +60,39 @@
         default:
             break;
     }
-    //init
-    self.LDsenddict = [NSMutableDictionary new];
     
-    //set value
-    [self.LDsenddict setObject:self.LDFirstName.text forKey:@"FirstName"];
-    [self.LDsenddict setObject:self.LDLastName.text forKey:@"LastName"];
-    [self.LDsenddict setObject:self.LDAge.text forKey:@"age"];
-    [self.LDsenddict setObject:self.LDSalary.text forKey:@"Salary"];
-    [self.LDsenddict setObject:sex forKey:@"Sex"];
-    [self.LDsenddict setObject:self.LDskill.text forKey:@"skill"];
-    [self.LDsenddict setObject:self.LDdescription.text forKey:@"Description"];
+    NSString *type;
+    switch (self.LDType.selectedSegmentIndex) {
+        case 0:
+            type = [NSString stringWithFormat:@"Leader"];
+            break;
+        case 1:
+            type = [NSString stringWithFormat:@"Member"];
+            break;
+        default:
+            break;
+    }
     
-    [leaderview.leaders addObject:self.LDsenddict];
+    
+    
+    //建立員工
+    if([type isEqualToString:@"Leader"])
+    {
+        Leader *leader = [[Leader alloc]initWthFirstName:self.LDFirstName.text LastName:self.LDLastName.text Sex:sex Age:[self.LDAge.text intValue] Salary:[self.LDSalary.text intValue ]];
+        
+        //將建立的員工加入公司
+        [company addEmployee:leader];
+    }
+    else if ([type isEqualToString:@"Member"])
+    {
+        Member *member = [[Member alloc]initWthFirstName:self.LDFirstName.text LastName:self.LDLastName.text Sex:sex Age:[self.LDAge.text intValue] Salary:[self.LDSalary.text intValue]];
+        
+        //將建立的員工加入公司
+        [company addEmployee:member];
+    }
+    
+    
     [leaderview.LtableView reloadData];
-    
-    
-    //    [self presentViewController: leaderview animated:(YES) completion:^{
-    //        //換完頁後
-    //
-    //
-    //        //塞回leader
-    //        [leaderview.leaders addObject:self.LDsenddict];
-    //        [leaderview.LtableView reloadData];
-    //    }];
-    
-    
     
     
     [self dismissViewControllerAnimated:YES completion:^{
@@ -88,13 +102,11 @@
     }];
 }
 
-
-
-//-(void)viewWillDisappear:(BOOL)animated
-//{
-//    LeaderViewController *leaderview = [self.storyboard instantiateViewControllerWithIdentifier:@"LeaderViewController"];
-//    [leaderview.LtableView reloadData];
-//}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField endEditing:YES];
+    return NO;
+}
 
 -(void)tapped
 {

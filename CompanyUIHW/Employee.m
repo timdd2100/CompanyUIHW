@@ -39,6 +39,13 @@
     NSLog(@"各位同仁好！我的名字是 %@ 我的職稱是 %@ 我的能力是 %@ 我的年齡是%i 我的婚姻狀態是%@",self.getFullName,self.title,self.skill,self.age,self.Marriage);
 }
 
+-(NSString *)getDescription
+{
+    NSString *result = [NSString stringWithFormat:@"各位同仁好！我的名字是 %@ 我的職稱是 %@ 我的能力是 %@ 我的年齡是%i 我的婚姻狀態是%@",self.getFullName,self.title,self.skill,self.age,self.Marriage];
+    return  result;
+}
+
+
 
 -(NSString *)Marriage
 {

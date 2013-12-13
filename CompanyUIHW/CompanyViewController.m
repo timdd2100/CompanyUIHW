@@ -7,17 +7,17 @@
 //
 
 #import "CompanyViewController.h"
-#import "LeaderViewController.h"
+#import "EmployeeViewController.h"
 #import "Company.h"
 @interface CompanyViewController ()
 
-@property LeaderViewController *LtableView;
-@property  NSString *companyName;
 
+@property  NSString *companyName;
+@property  EmployeeViewController *selfEmployee;
 @end
 
 @implementation CompanyViewController
-@synthesize Companys, LtableView, companyName;
+@synthesize Companys, companyName, selfEmployee;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -78,14 +78,21 @@
     //準備好欲傳送的物件
     companyName = [NSString stringWithFormat:@"%@", [tableView cellForRowAtIndexPath:indexPath].textLabel.text];
     
+    //
+    EmployeeViewController *LtableView;
    
+        LtableView = [self.storyboard instantiateViewControllerWithIdentifier:@"EmployeeViewController"];
+
+    selfEmployee = LtableView;
+
     
     //設定好要傳送的資料
-    LtableView.Lreceivedict = [NSMutableDictionary new];
-    [LtableView.Lreceivedict setObject:self.companyName forKey:@"CompanyName"];
+    selfEmployee.Lreceivedict = [NSMutableDictionary new];
+    [selfEmployee.Lreceivedict setObject:[Companys objectForKey:[NSString stringWithFormat:@"%li",(long)indexPath.row + 1]] forKey:@"Company"];
+
+    [selfEmployee.Lreceivedict setObject:self.companyName forKey:@"CompanyName"];
     
-    [self.navigationController pushViewController:LtableView animated:YES];
-    //[self presentViewController:LtableView animated:YES completion:^(void){}];
+    [self.navigationController pushViewController:selfEmployee animated:YES];
 }
 
 

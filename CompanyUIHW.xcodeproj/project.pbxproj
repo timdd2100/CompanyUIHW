@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0C6D1B1857EE5200BA77B3 /* EmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C6D1A1857EE5200BA77B3 /* EmployeeViewController.m */; };
+		3B2B9D7E185990AF003BFCA2 /* EMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B9D7D185990AF003BFCA2 /* EMDetailViewController.m */; };
 		3BF72F4518516D9500C53C65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF72F4418516D9500C53C65 /* Foundation.framework */; };
 		3BF72F4718516D9500C53C65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF72F4618516D9500C53C65 /* CoreGraphics.framework */; };
 		3BF72F4918516D9500C53C65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF72F4818516D9500C53C65 /* UIKit.framework */; };
@@ -25,7 +27,6 @@
 		3BF72F8918516FDD00C53C65 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F8418516FDD00C53C65 /* Employee.m */; };
 		3BF72F8A18516FDD00C53C65 /* Leader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F8618516FDD00C53C65 /* Leader.m */; };
 		3BF72F8B18516FDD00C53C65 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F8818516FDD00C53C65 /* Member.m */; };
-		3BF72F8E1851992200C53C65 /* LeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F8D1851992200C53C65 /* LeaderViewController.m */; };
 		3BF72F941851B33F00C53C65 /* LDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF72F931851B33F00C53C65 /* LDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B0C6D191857EE5200BA77B3 /* EmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeViewController.h; sourceTree = "<group>"; };
+		3B0C6D1A1857EE5200BA77B3 /* EmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeViewController.m; sourceTree = "<group>"; };
+		3B2B9D7C185990AF003BFCA2 /* EMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDetailViewController.h; sourceTree = "<group>"; };
+		3B2B9D7D185990AF003BFCA2 /* EMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDetailViewController.m; sourceTree = "<group>"; };
 		3BF72F4118516D9500C53C65 /* CompanyUIHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompanyUIHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF72F4418516D9500C53C65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BF72F4618516D9500C53C65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,8 +74,6 @@
 		3BF72F8618516FDD00C53C65 /* Leader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leader.m; sourceTree = "<group>"; };
 		3BF72F8718516FDD00C53C65 /* Member.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
 		3BF72F8818516FDD00C53C65 /* Member.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
-		3BF72F8C1851992200C53C65 /* LeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderViewController.h; sourceTree = "<group>"; };
-		3BF72F8D1851992200C53C65 /* LeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderViewController.m; sourceTree = "<group>"; };
 		3BF72F921851B33F00C53C65 /* LDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDetailViewController.h; sourceTree = "<group>"; };
 		3BF72F931851B33F00C53C65 /* LDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,8 +191,8 @@
 		3BF72F7D18516E5200C53C65 /* Employee */ = {
 			isa = PBXGroup;
 			children = (
-				3BF72F8C1851992200C53C65 /* LeaderViewController.h */,
-				3BF72F8D1851992200C53C65 /* LeaderViewController.m */,
+				3B0C6D191857EE5200BA77B3 /* EmployeeViewController.h */,
+				3B0C6D1A1857EE5200BA77B3 /* EmployeeViewController.m */,
 				3BF72F8318516FDD00C53C65 /* Employee.h */,
 				3BF72F8418516FDD00C53C65 /* Employee.m */,
 				3BF72F8518516FDD00C53C65 /* Leader.h */,
@@ -198,6 +201,8 @@
 				3BF72F8818516FDD00C53C65 /* Member.m */,
 				3BF72F921851B33F00C53C65 /* LDetailViewController.h */,
 				3BF72F931851B33F00C53C65 /* LDetailViewController.m */,
+				3B2B9D7C185990AF003BFCA2 /* EMDetailViewController.h */,
+				3B2B9D7D185990AF003BFCA2 /* EMDetailViewController.m */,
 			);
 			name = Employee;
 			sourceTree = "<group>";
@@ -305,9 +310,10 @@
 				3BF72F5118516D9500C53C65 /* main.m in Sources */,
 				3BF72F8B18516FDD00C53C65 /* Member.m in Sources */,
 				3BF72F941851B33F00C53C65 /* LDetailViewController.m in Sources */,
-				3BF72F8E1851992200C53C65 /* LeaderViewController.m in Sources */,
 				3BF72F8A18516FDD00C53C65 /* Leader.m in Sources */,
+				3B0C6D1B1857EE5200BA77B3 /* EmployeeViewController.m in Sources */,
 				3BF72F8018516FBF00C53C65 /* Company.m in Sources */,
+				3B2B9D7E185990AF003BFCA2 /* EMDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +522,7 @@
 				3BF72F7518516D9500C53C65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BF72F7618516D9500C53C65 /* Build configuration list for PBXNativeTarget "CompanyUIHWTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +531,7 @@
 				3BF72F7818516D9500C53C65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
