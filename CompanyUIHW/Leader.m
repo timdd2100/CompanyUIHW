@@ -25,7 +25,7 @@
         self.basesalary = sa;
         self.salary = basesalary*1.8;
     }
-     return self;
+    return self;
 }
 
 //overwrite
@@ -57,21 +57,47 @@
         NSArray *emp = [members allValues];
         NSLog(@"主管的成員如下：");
         for (int i = 0 ; i < [members count]; i++) {
-        NSLog(@"%@", [(id<IPerson>)emp[[members count] - (i+1)] getFullName]);
+            NSLog(@"%@", [(id<IPerson>)emp[[members count] - (i+1)] getFullName]);
         }
     }
     else
     {
         NSLog(@"Leader %@ has no members yet.",[self getFullName]);
     }
-
+    
 }
+
+-(NSMutableString *)showMembersbyString
+{
+    NSMutableString *result = [NSMutableString new];
+    if(members)
+    {
+        NSArray *emp = [members allValues];
+        
+        [result appendString:@"主管的成員如下："];
+        [result appendString:@"\n"];
+        //NSLog(@"主管的成員如下：");
+        for (int i = 0 ; i < [members count]; i++) {
+            [result appendFormat:@"%@", [(id<IPerson>)emp[[members count] - (i+1)] getFullName]];
+            [result appendString:@"\n"];
+        }
+    }
+    else
+    {
+        
+        [result appendFormat:@"Leader %@ has no members yet.",[self getFullName]];
+        [result appendString:@"\n"];
+    }
+    
+    return result;
+}
+
 
 #pragma -mark----委派（看老闆心情決定員工薪水漲幅）
 -(int)adjustSalary:(id)emp
 {
     if ([emp isKindOfClass:[Member class]]) {
-           int rnd = arc4random()%10;
+        int rnd = arc4random()%10;
         if (rnd > 6) {
             NSLog(@"主管 %@ 心情大好薪水加碼！", self.getFullName);
             return ((Member *)emp).salary *1.05;

@@ -33,5 +33,14 @@
     NSLog(@"員工 %@ 薪資調整後為 %i \n ---------------------" , [self getFullName], self.salary);
 }
 
+-(NSString *)adjSalarybyString
+{
+    NSString *result = [NSString new];
+    self.salary = [self.m_delegate adjustSalary:self];
+    result = [NSString stringWithFormat:@"員工 %@ 薪資調整後為 %i \n ---------------------" , [self getFullName], self.salary] ;
+    return result;
+    
+}
+
 
 @end

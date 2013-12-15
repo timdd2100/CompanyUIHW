@@ -12,7 +12,7 @@
 
 @property (nonatomic,strong)Leader *ReciveLeader;
 
-@property (nonatomic,copy)NSMutableArray *MemberArray;
+@property (nonatomic,strong)NSMutableArray *MemberArray;
 - (IBAction)AddCancel:(UIBarButtonItem *)sender;
 
 @end

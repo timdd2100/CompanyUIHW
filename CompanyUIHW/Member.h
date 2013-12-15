@@ -17,6 +17,6 @@
 //調整薪水
 //此方法透過delegate，呼叫由Leader實作的方法，來修改Member的薪水
 -(void)adjSalary;
-
+-(NSString *)adjSalarybyString;
 
 @end

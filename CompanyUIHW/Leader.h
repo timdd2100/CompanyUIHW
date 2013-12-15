@@ -20,4 +20,6 @@
 
 -(void)showMembers;//列出成員
 
+-(NSMutableString *)showMembersbyString;
+
 @end

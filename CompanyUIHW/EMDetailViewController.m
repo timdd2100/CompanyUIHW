@@ -51,12 +51,13 @@
     [description show];
     
 }
+
 - (IBAction)EMDAdj:(UIButton *)sender {
     if ([self.ReciveEmployee isKindOfClass:[Member class]]) {
         
         //委派給主管調薪
         Member *member = (Member *)self.ReciveEmployee;
-        [member adjSalary];
+        self.EMDtextView.text = [member adjSalarybyString];
     }
     else
     {
@@ -72,8 +73,8 @@
     if ([self.ReciveEmployee isKindOfClass:[Leader class]]) {
         
         AddViewController *memberAdd = [self.storyboard instantiateViewControllerWithIdentifier:@"AddViewController"];
-        
-        memberAdd.MemberArray = self.MemberArray;
+        //memberAdd.MemberArray = [NSMutableArray alloc];
+        memberAdd.MemberArray  = self.MemberArray;
         memberAdd.ReciveLeader = (Leader *)self.ReciveEmployee;
         [self presentViewController:memberAdd animated:YES completion:Nil];
     }
@@ -85,6 +86,23 @@
         [alert show];
     }
 }
+- (IBAction)EMDshowMembers:(id)sender {
+    if ([self.ReciveEmployee isKindOfClass:[Leader class]]) {
+        NSString *result = [(Leader *)self.ReciveEmployee showMembersbyString];
+        self.EMDtextView.text = result;
+    }
+    
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"警告" message:@"非Leader沒有擁有員工權利" delegate:Nil  cancelButtonTitle:@"確認" otherButtonTitles: nil];
+        alert.alertViewStyle = UIAlertViewStyleDefault;
+        
+        [alert show];
+    }
+
+    
+}
+
 
 
 @end

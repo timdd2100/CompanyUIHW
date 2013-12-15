@@ -11,6 +11,9 @@
 
 
 @interface AddViewController ()
+{
+    NSMutableArray *currectMember;
+}
 
 @end
 
@@ -30,12 +33,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    //這裡的member array是全新的
+    currectMember = [NSMutableArray new];
+    
     //目前leader擁有的成員
     NSArray *members = [self.ReciveLeader.members allValues];
-   
+    
     for (int i = 0 ; i < [self.MemberArray count]; i++) {
-        if ([members containsObject:[self.MemberArray objectAtIndex:i]]) {
-                [self.MemberArray removeObject:[self.MemberArray objectAtIndex:i]];
+        if (![members containsObject:[self.MemberArray objectAtIndex:i]]) {
+            [currectMember addObject:[self.MemberArray objectAtIndex:i]];
         }
     }
     
@@ -50,7 +56,7 @@
 #pragma -mark table區
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.MemberArray count];
+    return [currectMember count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,16 +64,22 @@
     static NSString *CellIdentifier = @"memberCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self.MemberArray objectAtIndex:indexPath.row]getFullName];
+    cell.textLabel.text = [[currectMember objectAtIndex:indexPath.row]getFullName];
     return cell;
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Member *member = [currectMember objectAtIndex:indexPath.row];
+    
     //leader 加入員工
-    [self.ReciveLeader addMembers:[self.MemberArray objectAtIndex:indexPath.row
-                                   ]];
+    [self.ReciveLeader addMembers:member];
+    
+    //員工將調薪委派給主管
+    member = [self.MemberArray objectAtIndex:[self.MemberArray indexOfObject:member]];
+    member.m_delegate = self.ReciveLeader;
+    
     [self dismissViewControllerAnimated:YES completion:Nil];
 }
 
